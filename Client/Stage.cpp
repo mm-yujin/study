@@ -14,11 +14,17 @@ CStage::~CStage()
 
 HRESULT CStage::Ready_Scene()
 {
-	if (FAILED(CTextureMgr::Get_Instance()->Insert_Texture(L"../Texture/Stage/Terrain/Tile/Tile%d.png", TEX_MULTI, L"Terrain", L"Tile", 36)))
+	/*if (FAILED(CTextureMgr::Get_Instance()->Insert_Texture(L"../Texture/Stage/Terrain/Tile/Tile%d.png", TEX_MULTI, L"Terrain", L"Tile", 36)))
 	{
 		ERR_MSG(L"Stage Tile Image Insert failed");
 		return E_FAIL;
-	}	
+	}	*/
+
+	if (FAILED(CTextureMgr::Get_Instance()->ReadImgPath(L"../Data/ImgPath.txt")))
+	{
+		ERR_MSG(L"ReadImgPath failed");
+		return E_FAIL;
+	}
 
 	CObj*	pObj = new CMyTerrain;
 	

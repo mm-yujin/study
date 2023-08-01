@@ -16,7 +16,8 @@ CTerrain::~CTerrain()
 
 void CTerrain::Initialize()
 {
-	if (FAILED(CTextureMgr::Get_Instance()->Insert_Texture(L"../Texture/Stage/Terrain/Tile/Tile%d.png", TEX_MULTI, L"Terrain", L"Tile", 36)))
+	if (FAILED(CTextureMgr::Get_Instance()->Insert_Texture
+	(L"../Texture/Stage/Terrain/Tile/Tile%d.png", TEX_MULTI, L"Terrain", L"Tile", 36)))
 		AfxMessageBox(L"TILE IMG FAILED");
 
 
