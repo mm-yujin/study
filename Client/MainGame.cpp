@@ -4,6 +4,7 @@
 
 #include "SceneMgr.h"
 #include "ObjMgr.h"
+#include "TimeMgr.h"
 
 
 CMainGame::CMainGame()
@@ -27,6 +28,7 @@ HRESULT CMainGame::Initialize(void)
 		return E_FAIL;
 	}
 
+	CTimeMgr::Get_Instance()->Initialize();
 	CSceneMgr::Get_Instance()->Change_SceneMgr(CSceneMgr::STAGE);
 
 /*
@@ -49,6 +51,7 @@ HRESULT CMainGame::Initialize(void)
 
 void CMainGame::Update(void)
 {
+	CTimeMgr::Get_Instance()->Update();
 	CSceneMgr::Get_Instance()->Update_SceneMgr();
 }
 
@@ -75,6 +78,7 @@ void CMainGame::Release(void)
 
 #endif // _DEBUG
 
+	CTimeMgr::Get_Instance()->Destroy_Instance();
 	CObjMgr::Get_Instance()->Destroy_Instance();
 	CTextureMgr::Get_Instance()->Destroy_Instance();
 	CSceneMgr::Get_Instance()->Destroy_Instance();

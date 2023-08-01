@@ -24,8 +24,8 @@ HRESULT CTimeMgr::Initialize()
 	QueryPerformanceCounter(&m_CurrentTime);		// 1000
 	QueryPerformanceCounter(&m_OldTime);			// 1020	
 	QueryPerformanceCounter(&m_OriginTime);			// 1030	
-
-	// 고해상도 타이머의 주파수를 얻어오는 함수, 주파수는 cpu 초당 클럭수 주기를 말함
+	
+// 고해상도 타이머의 주파수를 얻어오는 함수, 주파수는 cpu 초당 클럭수 주기를 말함
 	QueryPerformanceFrequency(&m_CpuTick);			// 1,600,000
 
 	return S_OK;
@@ -34,7 +34,7 @@ HRESULT CTimeMgr::Initialize()
 void CTimeMgr::Update(void)
 {
 	QueryPerformanceCounter(&m_CurrentTime);	// 2000	//	3000 // 4000 // 5000
-	
+
 	if (m_CurrentTime.QuadPart - m_OriginTime.QuadPart > m_CpuTick.QuadPart)
 	{
 		QueryPerformanceFrequency(&m_CpuTick);
@@ -46,6 +46,16 @@ void CTimeMgr::Update(void)
 	m_OldTime = m_CurrentTime;
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

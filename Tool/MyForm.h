@@ -3,6 +3,8 @@
 
 #include "UnitTool.h"
 #include "MapTool.h"
+#include "MySheet.h"
+#include "PathFInd.h"
 // CMyForm Æû ºäÀÔ´Ï´Ù.
 
 class CMyForm : public CFormView
@@ -33,12 +35,17 @@ public:
 
 	virtual void OnInitialUpdate();
 	afx_msg void OnUnitTool();
+	afx_msg void OnMapTool();
 
+	afx_msg void OnMySheet();
 public:
 	CFont		m_Font;
 	CUnitTool	m_UnitTool;
 	CMapTool	m_MapTool;
-	afx_msg void OnMapTool();
+	CMySheet	m_MySheet;
+	CPathFInd	m_PathFind;
+
+	afx_msg void OnPathFind();
 };
 
 

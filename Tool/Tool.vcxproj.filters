@@ -64,6 +64,18 @@
     <Filter Include="05. Etc\01. FileInfo">
       <UniqueIdentifier>{09843c86-a5ea-4ab2-a8fc-62bc2ad663b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06. FormView\DIalog\02. Sheet">
+      <UniqueIdentifier>{5b6f50cf-5ff0-4d34-a020-8b3e8f5f12fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. FormView\DIalog\02. Sheet\00. MyPage1">
+      <UniqueIdentifier>{80f2b4a9-1373-4b1c-8478-88db4529cc12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. FormView\DIalog\02. Sheet\01. MyPage2">
+      <UniqueIdentifier>{6a979891-555e-420b-97b1-50f8921d5361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. FormView\DIalog\03. PathFind">
+      <UniqueIdentifier>{38b74b97-da78-430f-9095-4634ac42e21f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -123,6 +135,18 @@
     <ClInclude Include="FileInfo.h">
       <Filter>05. Etc\01. FileInfo</Filter>
     </ClInclude>
+    <ClInclude Include="MySheet.h">
+      <Filter>06. FormView\DIalog\02. Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPage1.h">
+      <Filter>06. FormView\DIalog\02. Sheet\00. MyPage1</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPage2.h">
+      <Filter>06. FormView\DIalog\02. Sheet\01. MyPage2</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFInd.h">
+      <Filter>06. FormView\DIalog\03. PathFind</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tool.cpp">
@@ -172,6 +196,18 @@
     </ClCompile>
     <ClCompile Include="FileInfo.cpp">
       <Filter>05. Etc\01. FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="MySheet.cpp">
+      <Filter>06. FormView\DIalog\02. Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPage1.cpp">
+      <Filter>06. FormView\DIalog\02. Sheet\00. MyPage1</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPage2.cpp">
+      <Filter>06. FormView\DIalog\02. Sheet\01. MyPage2</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFInd.cpp">
+      <Filter>06. FormView\DIalog\03. PathFind</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

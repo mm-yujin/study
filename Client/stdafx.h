@@ -25,6 +25,7 @@
 #include <map>
 #include <algorithm>
 #include <string>
+#include <fstream>
 
 #ifdef _DEBUG
 

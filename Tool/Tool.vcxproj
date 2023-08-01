@@ -21,21 +21,21 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6AC63E15-A83E-40B7-B87C-55DD92D71EA8}</ProjectGuid>
     <RootNamespace>Tool</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <Keyword>MFCProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -43,14 +43,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -94,7 +94,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(WindowsSDK_IncludePath);../Header</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Header;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -196,6 +196,10 @@
     <ClInclude Include="MiniView.h" />
     <ClInclude Include="MultiTexture.h" />
     <ClInclude Include="MyForm.h" />
+    <ClInclude Include="MyPage1.h" />
+    <ClInclude Include="MyPage2.h" />
+    <ClInclude Include="MySheet.h" />
+    <ClInclude Include="PathFInd.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SingleTexture.h" />
     <ClInclude Include="stdafx.h" />
@@ -216,6 +220,10 @@
     <ClCompile Include="MiniView.cpp" />
     <ClCompile Include="MultiTexture.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="MyPage1.cpp" />
+    <ClCompile Include="MyPage2.cpp" />
+    <ClCompile Include="MySheet.cpp" />
+    <ClCompile Include="PathFInd.cpp" />
     <ClCompile Include="SingleTexture.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
