@@ -32,6 +32,8 @@ const TEXINFO * CTextureMgr::Get_Texture(const TCHAR * pObjKey, const TCHAR * pS
 
 HRESULT CTextureMgr::Insert_Texture(const TCHAR * pFilePath, TEXTYPE eType, const TCHAR * pObjKey, const TCHAR * pStateKey, const int & iCnt)
 {
+	m_wstrFullPath = pFilePath;
+
 	auto	iter = find_if(m_mapTex.begin(), m_mapTex.end(), [&](auto& MyPair)->bool {
 
 		if (pObjKey == MyPair.first)

@@ -20,11 +20,11 @@ HRESULT CStage::Ready_Scene()
 		return E_FAIL;
 	}	*/
 
-	if (FAILED(CTextureMgr::Get_Instance()->ReadImgPath(L"../Data/ImgPath.txt")))
+	/*if (FAILED(CTextureMgr::Get_Instance()->ReadImgPath(L"../Data/ImgPath.txt")))
 	{
 		ERR_MSG(L"ReadImgPath failed");
 		return E_FAIL;
-	}
+	}*/
 
 	CObj*	pObj = new CMyTerrain;
 	
@@ -35,13 +35,13 @@ HRESULT CStage::Ready_Scene()
 	CObjMgr::Get_Instance()->Add_Object(CObjMgr::TERRAIN, pObj);
 
 	// 플레이어
-	/*pObj = new CPlayer;
+	pObj = new CPlayer;
 	if (nullptr == pObj)
 		return E_FAIL;
 
 	pObj->Initialize();
 
-	CObjMgr::Get_Instance()->Add_Object(CObjMgr::PLAYER, pObj);*/
+	CObjMgr::Get_Instance()->Add_Object(CObjMgr::PLAYER, pObj);
 	
 	return S_OK;
 }

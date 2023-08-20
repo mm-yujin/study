@@ -33,6 +33,9 @@ typedef struct tagTile
 	BYTE		byOption;		// 0, 1번(장애물)
 	BYTE		byDrawID;		// 몇 번 타일 이미지
 
+	int			iIndex = 0;
+	int			iParentIdx = 0;
+
 }TILE;
 
 typedef	struct tagUnitData

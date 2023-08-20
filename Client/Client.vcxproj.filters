@@ -49,6 +49,18 @@
     <Filter Include="03. Scene\01. Stage">
       <UniqueIdentifier>{739641d6-dddd-4857-b1b9-5dc9936b9abb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Obj\01. Player">
+      <UniqueIdentifier>{d314a3d8-e4b2-40e3-9916-dab62cf94e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\AStarMgr">
+      <UniqueIdentifier>{3ef03615-625b-4c5f-a4b5-49120c81b1de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Obj\02. Bullet">
+      <UniqueIdentifier>{801fb692-e0fa-4397-a16c-1c4fb6039122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Manager\BulletMgr">
+      <UniqueIdentifier>{18bee42a-ab3c-421e-ad8f-f45479dd7555}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -105,6 +117,21 @@
     <ClInclude Include="Stage.h">
       <Filter>03. Scene\01. Stage</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>02. Obj\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="AStarMgr.h">
+      <Filter>01. Manager\AStarMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>03. Scene\00. Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>02. Obj\02. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMgr.h">
+      <Filter>01. Manager\BulletMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -151,6 +178,21 @@
     </ClCompile>
     <ClCompile Include="Stage.cpp">
       <Filter>03. Scene\01. Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>02. Obj\01. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="AStarMgr.cpp">
+      <Filter>01. Manager\AStarMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>03. Scene\00. Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>02. Obj\02. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp">
+      <Filter>01. Manager\BulletMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

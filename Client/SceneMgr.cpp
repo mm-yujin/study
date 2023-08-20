@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SceneMgr.h"
 #include "Stage.h"
+#include "Logo.h"
 
 IMPLEMENT_SINGLETON(CSceneMgr)
 
@@ -28,6 +29,7 @@ HRESULT CSceneMgr::Change_SceneMgr(ID eID)
 		switch (m_eNextScene)
 		{
 		case CSceneMgr::LOADING:
+			m_pScene = new CLogo;
 			break;
 
 		case CSceneMgr::STAGE:

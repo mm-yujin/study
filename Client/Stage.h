@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "MyTerrain.h"
+#include "Player.h"
 
 class CStage :	public CScene
 {

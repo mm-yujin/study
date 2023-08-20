@@ -16,7 +16,9 @@ CMyTerrain::~CMyTerrain()
 
 HRESULT CMyTerrain::Initialize(void)
 {
-	Load_Tile(L"../Data/Test.dat");
+	Load_Tile(L"../Data/Map.dat");
+
+	Ready_Adj();
 
 	return S_OK;
 }
@@ -24,16 +26,16 @@ HRESULT CMyTerrain::Initialize(void)
 int CMyTerrain::Update(void)
 {
 	if (0.f > ::Get_Mouse().x)
-		m_vScroll.x += 5.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
+		m_vScroll.x += 300.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
 
 	if (WINCX < ::Get_Mouse().x)
-		m_vScroll.x -= 5.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
+		m_vScroll.x -= 300.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
 
 	if (0.f > ::Get_Mouse().y)
-		m_vScroll.y += 5.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
+		m_vScroll.y += 300.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
 
 	if (WINCY < ::Get_Mouse().y)
-		m_vScroll.y -= 5.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
+		m_vScroll.y -= 300.f * CTimeMgr::Get_Instance()->Get_TimeDelta();
 
 	return 0;
 }
@@ -134,4 +136,81 @@ void CMyTerrain::Load_Tile(const TCHAR* pFilePath)
 
 	}
 	CloseHandle(hFile);
+}
+
+void CMyTerrain::Ready_Adj()
+{
+	m_vecAdj.resize(m_vecTile.size());
+
+	for (int i = 0; i < TILEY; ++i)
+	{
+		for (int j = 0; j < TILEX; ++j)
+		{
+			int iIndex = i * TILEX + j;
+
+			// ÁÂ »ó´Ü ÀÌ¿ô
+			// ¸Ç À­ÁÙ		¸Ç ¿ÞÂÊ ÁÙ
+
+			if ((0 != i) && (0 != iIndex % (TILEX * 2)))
+			{
+				// È¦ -> Â¦ 20 °¨¼Ò, Â¦ -> È¦ 21 °¨¼Ò
+				if ((0 != i % 2) && (!m_vecTile[iIndex - TILEX]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex - TILEX]);
+				}
+				else if ((0 == i % 2) && (!m_vecTile[iIndex - (TILEX + 1)]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex - (TILEX + 1)]);
+				}
+			}
+
+			// ¿ì »ó´Ü ÀÌ¿ô
+			// ¸Ç À­ÁÙ		¸Ç ¿À¸¥ÂÊ ÁÙ
+
+			if ((0 != i) && ((TILEX * 2 - 1) != iIndex % (TILEX * 2)))
+			{
+				// È¦ -> Â¦ 19 °¨¼Ò, Â¦ -> È¦ 20 °¨¼Ò
+				if ((0 != i % 2) && (!m_vecTile[iIndex - (TILEX - 1)]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex - (TILEX - 1)]);
+				}
+				else if ((0 == i % 2) && (!m_vecTile[iIndex - TILEX]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex - TILEX]);
+				}
+			}
+
+			// ÁÂ ÇÏ´Ü ÀÌ¿ô
+			// ¸Ç ¾Æ·§ ÁÙ		¸Ç ¿ÞÂÊ ÁÙ
+
+			if ((TILEY - 1 != i) && (0 != iIndex % (TILEX * 2)))
+			{
+				// È¦ -> Â¦ 20 Áõ°¡, Â¦ -> È¦ 19 Áõ°¡
+				if ((0 != i % 2) && (!m_vecTile[iIndex + TILEX]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex + TILEX]);
+				}
+				else if ((0 == i % 2) && (!m_vecTile[iIndex + (TILEX - 1)]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex + (TILEX - 1)]);
+				}
+			}
+
+			// ¿ì ÇÏ´Ü ÀÌ¿ô
+			// ¸Ç ¾Æ·§ ÁÙ		¸Ç ¿À¸¥ÂÊ ÁÙ
+
+			if ((TILEY - 1 != i) && ((TILEX * 2 - 1) != iIndex % (TILEX * 2)))
+			{
+				// È¦ -> Â¦ 21 Áõ°¡, Â¦ -> È¦ 20 Áõ°¡
+				if ((0 != i % 2) && (!m_vecTile[iIndex + (TILEX + 1)]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex + (TILEX + 1)]);
+				}
+				else if ((0 == i % 2) && (!m_vecTile[iIndex + TILEX]->byOption))
+				{
+					m_vecAdj[iIndex].push_back(m_vecTile[iIndex + TILEX]);
+				}				
+			}
+		}
+	}
 }

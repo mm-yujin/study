@@ -34,6 +34,8 @@ void CTerrain::Initialize()
 			pTile->vSize	= { (float)TILECX, (float)TILECY, 0.f };
 			pTile->byOption = 0;
 			pTile->byDrawID = 3;
+			pTile->iIndex = i * TILEX + j;
+			pTile->iParentIdx = 0;
 
 			m_vecTile.push_back(pTile);
 		}

@@ -76,8 +76,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -107,12 +105,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Header;$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -153,13 +149,18 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AStarMgr.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletMgr.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Device.h" />
+    <ClInclude Include="Logo.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MultiTexture.h" />
     <ClInclude Include="MyTerrain.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjMgr.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
@@ -172,13 +173,18 @@
     <ClInclude Include="TimeMgr.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AStarMgr.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletMgr.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Device.cpp" />
+    <ClCompile Include="Logo.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MultiTexture.cpp" />
     <ClCompile Include="MyTerrain.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="ObjMgr.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="SingleTexture.cpp" />

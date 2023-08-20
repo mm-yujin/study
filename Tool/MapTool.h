@@ -26,6 +26,7 @@ protected:
 public:
 	afx_msg void OnListBox();
 	afx_msg void OnDropFiles(HDROP hDropInfo);
+	afx_msg void OnSaveData();
 
 private:
 	void	Horizontal_Scroll();
@@ -37,5 +38,4 @@ public:
 	map<CString, CImage*>	m_mapPngImg;
 	int		m_iDrawID = 0;
 
-	afx_msg void OnSaveData();
 };

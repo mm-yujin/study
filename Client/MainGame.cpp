@@ -5,6 +5,8 @@
 #include "SceneMgr.h"
 #include "ObjMgr.h"
 #include "TimeMgr.h"
+#include "AStarMgr.h"
+#include "BulletMgr.h"
 
 
 CMainGame::CMainGame()
@@ -29,9 +31,9 @@ HRESULT CMainGame::Initialize(void)
 	}
 
 	CTimeMgr::Get_Instance()->Initialize();
-	CSceneMgr::Get_Instance()->Change_SceneMgr(CSceneMgr::STAGE);
+	CSceneMgr::Get_Instance()->Change_SceneMgr(CSceneMgr::LOADING);
 
-/*
+
 #ifdef _DEBUG
 
 	if (::AllocConsole() == TRUE)
@@ -74,10 +76,12 @@ void CMainGame::Release(void)
 {
 #ifdef _DEBUG
 
-	//FreeConsole();
+	FreeConsole();
 
 #endif // _DEBUG
 
+	CBulletMgr::Get_Instance()->Destroy_Instance();
+	CAStarMgr::Get_Instance()->Destroy_Instance();
 	CTimeMgr::Get_Instance()->Destroy_Instance();
 	CObjMgr::Get_Instance()->Destroy_Instance();
 	CTextureMgr::Get_Instance()->Destroy_Instance();
